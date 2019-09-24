@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>regist</title>
+		<link href="css/style.css" rel='stylesheet' type='text/css' />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type="text/javascript">
+			var xhr = new XMLHttpRequest();
+			function kp(txt){
+				var reg1 = /^[a-z\d_]{5,20}$/i;
+				
+				
+				 if(reg1.test(txt.value)){ 
+				 xhr.onreadystatechange = function(){
+				 	
+					if(xhr.readyState==4){
+ 						if(xhr.status==200){
+ 							var msg = document.getElementById("tip1");
+ 							if(xhr.responseText=="true"){//说明该用户名，已经存在
+ 								txt.style.borderColor="red";
+								document.getElementById("submit").disabled=true;
+								msg.innerHTML="<font color='red'>账号已存在</font>";
+ 							}else{
+ 									txt.style.borderColor="green";
+									msg.innerHTML="<font color='green'>可用</font>";
+									document.getElementById("submit").disabled=false;
+ 							}
+ 						}
+ 					}
+				
+				}
+				xhr.open("GET","servlet/uidCheck?name="+txt.value,true);
+				xhr.send();
+				}else{
+					txt.style.borderColor="red";
+					document.getElementById("submit").disabled=true;
+					document.getElementById("tip1").innerHTML="<font color='red'>格式存在问题</font>";
+				}
+			}
+			function pw(txt){
+				var p1 = document.getElementById("pwd1").value;
+				if(txt.value!=p1){
+					txt.style.borderColor="red";
+					document.getElementById("tip2").innerHTML="<font color='red'>密码输入不一致</font>";
+					document.getElementById("submit").disabled=true;
+				}else{
+					txt.style.borderColor="green";
+					document.getElementById("tip2").innerHTML="";
+					document.getElementById("submit").disabled=false;
+				}
+			}
+			function ph(txt){
+				reg2 = /^1[3|4|5|8][0-9]\d{4,8}$/;
+				if(reg2.test(txt.value)){
+					txt.style.borderColor="green";
+					document.getElementById("tip3").innerHTML="";
+					document.getElementById("submit").disabled=false;
+				}else{
+					txt.style.borderColor="red";
+					document.getElementById("tip3").innerHTML="<font color='red'>手机号格式错误</font>";
+				    document.getElementById("submit").disabled=true;
+				}
+			}
+			function suc(){
+				window.alert("注册成功");
+			}
+		</script>
+		
+	</head>
+	<body>
+		<div class="main">
+			<div class="login-form">
+					<h1><b>用户注册</b></h1>
+					<div class="head">
+						<img src="images/user.png" alt=""/>
+					</div>
+					<form action="servlet/userRegist">
+						<input type="text" class="text" placeholder="用户名"  id="rid" onfocusout="kp(this)" name="rid"><span id="tip1"></span>
+						<input type="password" placeholder="密码"  id="pwd1">
+						<input type="password" placeholder="重复密码"  id="pwd2" onkeyup="pw(this)" name="pwd"><span id="tip2"></span>
+						<input type="text" class="text" placeholder="昵称"  id="name" name="uname">
+						<input type="text" class="text" placeholder="手机号码"  id="tel" onkeyup="ph(this)" name="uphone"><span id= "tip3"></span>
+						<div class="submit">
+							<input type="submit" id="submit"  value="注册" disabled="true" onclick="suc()">
+					</div>	
+					
+					
+				</form>
+			</div>
+			
+		</div>
+	</body>
+</html>

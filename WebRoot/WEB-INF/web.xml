@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0"
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>UploadHandleServlet</servlet-name>
+    <servlet-class>servlet.UploadHandleServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ListFileServlet</servlet-name>
+    <servlet-class>servlet.ListFileServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>DownLoadServlet</servlet-name>
+    <servlet-class>servlet.DownLoadServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>FileDeleteServlet</servlet-name>
+    <servlet-class>servlet.FileDeleteServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>userRegist</servlet-name>
+    <servlet-class>UserServlet.userRegist</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>userLogin</servlet-name>
+    <servlet-class>UserServlet.userLogin</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>uidCheck</servlet-name>
+    <servlet-class>UserServlet.uidCheck</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>userLogout</servlet-name>
+    <servlet-class>UserServlet.userLogout</servlet-class>
+  </servlet>
+
+
+
+
+
+
+
+
+  <servlet-mapping>
+    <servlet-name>UploadHandleServlet</servlet-name>
+    <url-pattern>/servlet/UploadHandleServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ListFileServlet</servlet-name>
+    <url-pattern>/servlet/ListFileServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DownLoadServlet</servlet-name>
+    <url-pattern>/servlet/DownLoadServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>FileDeleteServlet</servlet-name>
+    <url-pattern>/servlet/FileDeleteServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>userRegist</servlet-name>
+    <url-pattern>/servlet/userRegist</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>userLogin</servlet-name>
+    <url-pattern>/servlet/userLogin</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>uidCheck</servlet-name>
+    <url-pattern>/servlet/uidCheck</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>userLogout</servlet-name>
+    <url-pattern>/servlet/userLogout</url-pattern>
+  </servlet-mapping>
+
+</web-app>
